@@ -16,7 +16,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   color: #fff;
-  background: linear-gradient(270deg, #1a1818, #3a3950, #bdc8d7);
+  background: linear-gradient(270deg, #1a1818, #3a3950, #2376ea);
   background-size: 600% 600%;
   animation: gradientBG 15s ease infinite;
 }
@@ -225,21 +225,32 @@ footer {
       <!-- Kontak & Newsletter -->
       <div class="col-md-4 mb-4">
         <h5 class="fw-bold mb-3">Kontak & Newsletter</h5>
-        <p>Email: info@siakad.com</p>
-        <p>Telepon: +62 812 3456 7890</p>
+        <p>Email: fakhrishiddiq43@gmail.com</p>
+        <p>Telepon: +62 857 7391 8581</p>
 
         <!-- Newsletter -->
-        <div class="d-flex mt-3">
-          <input type="email" class="form-control form-control-sm me-2" placeholder="Email anda">
-          <button class="btn btn-warning btn-sm">Subscribe</button>
+        <div class="d-flex mt-3" id="subscribeForm">
+            <input type="email" class="form-control form-control-sm me-2" id="emailInput" placeholder="Email anda">
+            <button class="btn btn-warning btn-sm" id="subscribeBtn">Subscribe</button>
         </div>
+
+        <!-- Toast Container -->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="subscribeToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+            <div class="toast-body" id="toastBody"></div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+        </div>
+
 
         <!-- Sosial Media -->
         <div class="d-flex gap-3 mt-3">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/6285773918581" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/fchrxxn_/" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/fakhri-shiddiq-rizkillah-14242a2a3/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
 
@@ -305,6 +316,21 @@ footer {
       transform: translateY(-2px);
       transition: 0.3s;
     }
+
+    /* Animasi slide in */
+    .toast {
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .toast.showing {
+    transform: translateY(0);
+    }
+
+    .toast.show {
+    transform: translateY(0);
+    opacity: 1;
+    }
   </style>
 </footer>
 
@@ -334,5 +360,27 @@ window.addEventListener("scroll", revealFeatures);
 revealFeatures();
 </script>
 
+<script>
+const toastEl = document.getElementById('subscribeToast');
+const toast = new bootstrap.Toast(toastEl, { delay: 3000 }); // otomatis hilang 3 detik
+
+document.getElementById('subscribeBtn').addEventListener('click', function() {
+  const email = document.getElementById('emailInput').value.trim();
+  const toastBody = document.getElementById('toastBody');
+
+  if(email === ''){
+    toastEl.classList.remove('bg-success');
+    toastEl.classList.add('bg-danger');
+    toastBody.textContent = 'Masukkan email anda terlebih dahulu!';
+  } else {
+    toastEl.classList.remove('bg-danger');
+    toastEl.classList.add('bg-success');
+    toastBody.textContent = `Terima kasih! Email ${email} berhasil didaftarkan.`;
+    document.getElementById('emailInput').value = '';
+  }
+
+  toast.show();
+});
+</script>
 </body>
 </html>

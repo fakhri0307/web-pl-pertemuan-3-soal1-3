@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<title>Penjelasan Soal</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR (desktop only) -->
+<div class="sidebar p-3 d-none d-md-block">
+  <div class="d-flex align-items-center mb-5">
+    <img src="../img/logopt.png" alt="Logo" style="width:50px; height:50px; object-fit:cover; border-radius:8px;" class="me-2">
+    <span class="fw-bold fs-5 text-primary">FAKHRI SR</span>
+  </div>
+  <a href="dashboard.html" class="d-block py-2 px-3 mb-4 rounded hover-bg"><i class="fa fa-chart-line me-2"></i> Dashboard</a>
+  <a href="bbm.html" class="d-block py-2 px-3 mb-4 rounded hover-bg"><i class="fa fa-gas-pump me-2"></i> BBM</a>
+  <a href="laptop.html" class="d-block py-2 px-3 mb-4 rounded hover-bg"><i class="fa fa-laptop me-2"></i> Laptop</a>
+  <a href="kelulusan.html" class="d-block py-2 px-3 mb-4 rounded hover-bg"><i class="fa fa-graduation-cap me-2"></i> Kelulusan</a>
+  <a href="soal.html" class="d-block py-2 px-3 mb-4 rounded hover-bg"><i class="fa fa-book me-2"></i> Penjelasan Soal</a>
+</div>
+
+<!-- NAVBAR (mobile only) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm d-md-none mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-primary" href="#">
+      <i class="fa fa-chart-line"></i> PROGRAMMING LANGUAGE
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mobileNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="bbm.html">BBM</a></li>
+        <li class="nav-item"><a class="nav-link" href="laptop.html">Laptop</a></li>
+        <li class="nav-item"><a class="nav-link" href="kelulusan.html">Kelulusan</a></li>
+        <li class="nav-item"><a class="nav-link" href="soal.html">Penjelasan Soal</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <!-- Profile -->
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#profileModal">
+            <i class="fa fa-user me-2"></i> Profile
+          </a>
+        </li>
+        <!-- Logout -->
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="#" onclick="logout()">
+            <i class="fa fa-sign-out-alt me-2"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="content">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-3 mb-4 d-none d-md-flex">
+    <span class="navbar-brand fw-bold text-primary"><i class="fa fa-chart-line"></i> BBM - PERJALANAN</span>
+    <div class="ms-auto d-flex align-items-center gap-3">
+      <div class="dropdown">
+        <button class="btn d-flex align-items-center user-menu dropdown-toggle" data-bs-toggle="dropdown">
+          <img src="../img/foto-user.jpeg" class="user-img me-2">
+          <div class="text-start d-none d-md-block">
+            <div class="fw-semibold small">Admin User</div>
+            <div class="text-muted small">Administrator</div>
+          </div>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#profileModal"><i class="fa fa-user me-2"></i> Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i class="fa fa-sign-out-alt me-2"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container mt-4">
+
+<h2 class="mb-4">Penjelasan Soal Logika JavaScript</h2>
+
+
+<div class="card p-4 mb-4">
+
+<h4>Soal 1 – Konsumsi BBM Perjalanan</h4>
+
+<p>
+Seorang dosen melakukan perjalanan menggunakan mobil dari kota Bogor menuju
+Yogyakarta. Jarak total perjalanan yang ditempuh adalah <b>560 kilometer</b>.
+Mobil yang digunakan memiliki efisiensi bahan bakar sebesar
+<b>1 liter untuk setiap 12 kilometer perjalanan</b>.
+</p>
+
+<p>
+Selain itu, harga bahan bakar yang digunakan pada perjalanan tersebut adalah
+<b>Rp13.500 per liter</b>. Dengan menggunakan informasi tersebut,
+kita dapat menghitung jumlah bahan bakar yang dibutuhkan selama perjalanan
+serta total biaya yang harus dikeluarkan untuk membeli bensin.
+</p>
+
+<p>
+Dalam perhitungan ini digunakan beberapa variabel JavaScript sebagai berikut:
+</p>
+
+<ul>
+
+<li><b>jarak</b> = 560 → menyatakan jarak total perjalanan dalam kilometer.</li>
+
+<li><b>konsumsiMobil</b> = 12 → menunjukkan bahwa mobil dapat menempuh
+12 km untuk setiap 1 liter bensin.</li>
+
+<li><b>hargaBensin</b> = 13500 → harga bensin per liter.</li>
+
+</ul>
+
+<p>
+Tujuan dari soal ini adalah menghitung dua hal utama:
+</p>
+
+<ol>
+
+<li>Jumlah total bensin yang diperlukan untuk menyelesaikan perjalanan.</li>
+
+<li>Total biaya yang harus dibayarkan untuk membeli bensin tersebut.</li>
+
+</ol>
+
+<p>
+Hasil perhitungan kemudian disimpan dalam dua variabel baru yaitu:
+</p>
+
+<ul>
+
+<li><b>totalLiter</b> → jumlah bensin yang dibutuhkan.</li>
+
+<li><b>totalBiaya</b> → total biaya pembelian bensin.</li>
+
+</ul>
+
+<p>
+Dalam penyelesaian soal ini hanya diperbolehkan menggunakan
+<b>operator aritmatika</b> seperti pembagian dan perkalian.
+</p>
+
+</div>
+
+
+
+<div class="card p-4 mb-4">
+
+<h4>Soal 2 – Distribusi Laptop Laboratorium</h4>
+
+<p>
+Sebuah fakultas informatika melakukan pengadaan perangkat komputer berupa
+<b>185 unit laptop baru</b>. Laptop tersebut akan didistribusikan kepada
+beberapa laboratorium komputer yang ada di fakultas tersebut.
+</p>
+
+<p>
+Jumlah laboratorium yang akan menerima laptop adalah sebanyak
+<b>7 laboratorium</b>. Setiap laboratorium diharapkan menerima jumlah laptop
+yang sama agar distribusi perangkat dapat dilakukan secara adil dan merata.
+</p>
+
+<p>
+Namun, karena jumlah laptop tidak selalu dapat dibagi secara sempurna,
+maka ada kemungkinan akan terdapat beberapa laptop yang tersisa.
+</p>
+
+<p>
+Untuk menyelesaikan soal ini digunakan dua variabel utama:
+</p>
+
+<ul>
+
+<li><b>totalLaptop</b> = 185 → jumlah seluruh laptop yang tersedia.</li>
+
+<li><b>jumlahLab</b> = 7 → jumlah laboratorium yang akan menerima laptop.</li>
+
+</ul>
+
+<p>
+Berdasarkan data tersebut, kita diminta untuk menghitung dua hal berikut:
+</p>
+
+<ol>
+
+<li>Jumlah laptop yang diterima oleh setiap laboratorium.</li>
+
+<li>Jumlah laptop yang tersisa setelah pembagian dilakukan.</li>
+
+</ol>
+
+<p>
+Hasil perhitungan tersebut kemudian disimpan dalam dua variabel baru yaitu:
+</p>
+
+<ul>
+
+<li><b>laptopPerLab</b> → jumlah laptop yang diterima setiap laboratorium.</li>
+
+<li><b>sisaLaptop</b> → jumlah laptop yang tidak dapat dibagi secara merata.</li>
+
+</ul>
+
+<p>
+Untuk menyelesaikan perhitungan ini digunakan
+<b>operator aritmatika</b> seperti pembagian dan operator modulus
+untuk mendapatkan nilai sisa pembagian.
+</p>
+
+</div>
+
+
+
+<div class="card p-4 mb-4">
+
+<h4>Soal 3 – Syarat Kelulusan Mata Kuliah</h4>
+
+<p>
+Seorang mahasiswa dinyatakan lulus dalam mata kuliah
+<b>Programming Language</b> jika memenuhi seluruh persyaratan akademik
+yang telah ditentukan oleh dosen pengampu mata kuliah tersebut.
+</p>
+
+<p>
+Terdapat tiga syarat utama yang harus dipenuhi oleh mahasiswa, yaitu:
+</p>
+
+<ul>
+
+<li>Nilai UAS minimal <b>70</b>.</li>
+
+<li>Nilai tugas minimal <b>60</b>.</li>
+
+<li>Persentase kehadiran minimal <b>75%</b>.</li>
+
+</ul>
+
+<p>
+Data nilai mahasiswa yang akan diperiksa adalah sebagai berikut:
+</p>
+
+<ul>
+
+<li><b>nilaiUAS</b> = 72</li>
+
+<li><b>nilaiTugas</b> = 68</li>
+
+<li><b>kehadiran</b> = 80</li>
+
+</ul>
+
+<p>
+Tujuan dari soal ini adalah menentukan apakah mahasiswa tersebut
+<b>lulus</b> atau <b>tidak lulus</b> berdasarkan ketiga syarat tersebut.
+</p>
+
+<p>
+Hasil evaluasi kemudian disimpan dalam sebuah variabel bernama
+<b>lulus</b> yang memiliki tipe data boolean:
+</p>
+
+<ul>
+
+<li><b>true</b> → jika semua syarat terpenuhi.</li>
+
+<li><b>false</b> → jika salah satu syarat tidak terpenuhi.</li>
+
+</ul>
+
+<p>
+Untuk melakukan pengecekan kondisi tersebut digunakan
+<b>operator logika</b> seperti:
+</p>
+
+<ul>
+
+<li>Operator perbandingan <b>>=</b></li>
+
+<li>Operator logika <b>&&</b> (AND)</li>
+
+<li>Operator logika <b>||</b> (OR)</li>
+
+</ul>
+
+<p>
+Sebagai tambahan (bonus), nilai boolean dari variabel <b>lulus</b>
+kemudian diubah menjadi nilai numerik, yaitu:
+</p>
+
+<ul>
+
+<li><b>1</b> jika mahasiswa lulus</li>
+
+<li><b>0</b> jika mahasiswa tidak lulus</li>
+
+</ul>
+
+<p>
+Nilai tersebut disimpan dalam variabel baru bernama
+<b>statusKelulusan</b> tanpa menggunakan struktur percabangan
+<b>if</b>.
+</p>
+
+</div>
+
+
+</div>
+</div>
+
+
+
+<script src="../js/soal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- POP UP USER -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold" id="profileModalLabel">Profile User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body text-center">
+        <img src="../img/foto-user.jpeg" alt="User" class="rounded-circle mb-3" style="width:100px; height:100px; object-fit:cover;">
+        <h5 class="fw-semibold mb-2">MAHASISWA</h5>
+        <div class="text-muted mb-2">Fakhri Shiddiq Rizkillah</div>
+        <div class="text-muted mb-2">11525017</div>
+        <div class="text-muted mb-2">Sistem Informasi</div>
+        <div class="text-muted mb-2">Semester 2</div>
+        <div class="text-muted mb-2">Universitas Binaniaga Indonesia</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

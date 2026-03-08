@@ -1,0 +1,206 @@
+#lineChart {
+background:#0d1117;
+border-radius:10px;
+padding:10px;
+}
+
+body{background:#f1f5f9;font-family:'Segoe UI',sans-serif;}
+.sidebar{position:fixed;width:240px;height:100%;background:#0f172a;padding-top:20px;z-index:1000;}
+.content{margin-left:240px;padding:25px;}
+.sidebar a{display:block;color:#cbd5f1;padding:12px 20px;text-decoration:none;transition:0.3s;}
+.sidebar a:hover{background:#1e293b;color:white;}
+.card{border:none;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.08);}
+.user-img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid #e4e6ef;}
+.user-menu{background:transparent;border:none;transition:0.2s;}
+.user-menu:hover{background:#f5f6fa;border-radius:8px;}
+@media(max-width:768px){
+  .sidebar{display:none;}
+  .content{margin-left:0;padding:15px;}
+}
+
+/* SIDEBAR */
+
+.sidebar{
+position:fixed;
+width:240px;
+height:100%;
+background:#0f172a;
+padding-top:20px;
+}
+
+.sidebar h4{
+color:white;
+text-align:center;
+margin-bottom:30px;
+}
+
+.sidebar a{
+display:block;
+color:#cbd5f1;
+padding:12px 20px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.sidebar a:hover{
+background:#1e293b;
+color:white;
+}
+
+.content{
+margin-left:240px;
+padding:25px;
+}
+
+/* CARD */
+
+.card{
+border:none;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* LOADING */
+
+#loading{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+/* MOBILE */
+
+/* SIDEBAR - desktop only */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:240px;
+    height:100%;
+    background:#0f172a;
+    padding-top:20px;
+    z-index:1000;
+}
+
+/* CONTENT - desktop */
+.content{
+    margin-left:240px;
+    padding:25px;
+}
+
+/* MOBILE: hide sidebar, use top navbar */
+@media(max-width:768px){
+    .sidebar{
+        display:none; /* sidebar hilang */
+    }
+
+    .content{
+        margin-left:0; /* full width */
+        padding:15px;
+    }
+
+    /* Navbar menyesuaikan */
+    .navbar{
+        position:sticky;
+        top:0;
+        z-index:999;
+    }
+}
+
+canvas{
+height:350px !important;
+}
+
+.card{
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* USER PHOTO */
+
+.user-img{
+
+width:38px;
+height:38px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:2px solid #e4e6ef;
+
+}
+
+
+/* USER MENU */
+
+.user-menu{
+
+background:transparent;
+border:none;
+
+transition:0.2s;
+
+}
+
+.user-menu:hover{
+
+background:#f5f6fa;
+border-radius:8px;
+
+}
+
+
+/* SEARCH BAR */
+
+.navbar input{
+
+border-radius:20px;
+
+padding-left:15px;
+
+}
+
+
+/* NOTIFICATION */
+
+.fa-bell{
+
+cursor:pointer;
+transition:0.2s;
+
+}
+
+.fa-bell:hover{
+
+color:#0d6efd;
+
+transform:scale(1.1);
+
+}
+
+/* efek hover menu sidebar */
+.sidebar a.hover-bg:hover {
+  background-color: #f0f2f5;
+  color: #0d6efd;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+/* Ikon animasi */
+#loginIcon {
+  transition: transform 0.3s;
+}
+
+/* Efek klik */
+.btn-login:active #loginIcon {
+  transform: rotate(20deg) scale(1.2);
+}
+

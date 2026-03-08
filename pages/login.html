@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login SIAKAD - Modern</title>
+
+<!-- Bootstrap & Font Awesome -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+  /* Background gradient animasi */
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #1e1e2f, #7592d4, #0d1117, #aa97bf);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+    position: relative;
+  }
+
+  @keyframes gradientBG {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+
+  /* Back button kiri atas */
+  .back-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    color: #fff;
+    z-index: 2;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .back-icon:hover {
+    color: #ffd700;
+    transform: scale(1.2);
+  }
+
+  /* Login card */
+  .login-card {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideUpFade 0.8s forwards;
+  }
+
+  @keyframes slideUpFade {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .login-card:hover {
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  }
+
+  /* Kiri: image */
+  .login-card .card-image {
+    flex: 1;
+    background: url('../img/logopt.png') no-repeat center;
+    background-color: #0d1117;
+    background-size: cover;
+    min-height: 400px;
+    transition: transform 0.3s;
+  }
+  .login-card:hover .card-image {
+    transform: scale(1.05);
+  }
+
+  /* Kanan: form */
+  .login-card .card-form {
+    flex: 1;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-form h4 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #0d6efd;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  /* Petunjuk username/password */
+  .card-form p.user-guide {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 25px;
+  }
+
+  .input-group .form-control {
+    transition: all 0.4s;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  }
+  .input-group .form-control:focus {
+    box-shadow: 0 0 15px rgba(13,110,253,0.5);
+    border-color: #0d6efd;
+  }
+
+  .input-group-text {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 10px 0 0 10px;
+  }
+
+  /* Tombol login */
+  .btn-login {
+    background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+  .btn-login:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: linear-gradient(135deg, #0b5ed7, #0d6efd);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  }
+
+  /* Animasi ikon login */
+  #loginIcon {
+    transition: transform 0.3s;
+  }
+
+  /* Toast */
+  .toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1055;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px){
+    .login-card {
+      flex-direction: column;
+    }
+    .login-card .card-image {
+      min-height: 200px;
+    }
+    .card-form {
+      padding: 30px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Back -->
+<a href="../index.html" class="back-icon"><i class="fa fa-arrow-left"></i></a>
+
+<!-- Login Card -->
+<div class="login-card">
+
+  <!-- Kiri: Image -->
+  <div class="card-image"></div>
+
+  <!-- Kanan: Form -->
+  <div class="card-form">
+    <h4>Login SIAKAD</h4>
+    <p class="user-guide">Gunakan Username: <b>payy</b> dan Password: <b>123</b></p>
+
+    <!-- Username -->
+    <div class="input-group mb-3">
+      <span class="input-group-text"><i class="fa fa-user"></i></span>
+      <input id="username" type="text" class="form-control" placeholder="Username">
+    </div>
+
+    <!-- Password -->
+    <div class="input-group mb-3">
+      <span class="input-group-text"><i class="fa fa-lock"></i></span>
+      <input id="password" type="password" class="form-control" placeholder="Password">
+    </div>
+
+    <!-- Login button -->
+    <button class="btn btn-login w-100" id="btnLogin" onclick="login()">
+      <i class="fa fa-sign-in-alt" id="loginIcon"></i> Login
+    </button>
+  </div>
+
+</div>
+
+<!-- Toast -->
+<div class="toast-container">
+  <div id="loginToast" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toastBody">Error message</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Animasi ikon saat klik
+  function animateIcon(){
+    const icon = document.getElementById('loginIcon');
+    icon.style.transform = "rotate(20deg) scale(1.3)";
+    setTimeout(() => {
+      icon.style.transform = "rotate(0deg) scale(1)";
+    }, 300);
+  }
+
+  // Fungsi toast
+  function showToast(message){
+    const toastEl = document.getElementById('loginToast');
+    const toastBody = document.getElementById('toastBody');
+    toastBody.innerText = message;
+    const toast = new bootstrap.Toast(toastEl);
+    toast.show();
+  }
+
+  // Login
+  function login(){
+    animateIcon();
+    const user = document.getElementById("username").value.trim();
+    const pass = document.getElementById("password").value.trim();
+
+    if(!user || !pass){
+      showToast("Username atau Password belum diisi");
+      return;
+    }
+
+    if(user === "payy" && pass === "123"){
+      localStorage.setItem("login","true");
+      window.location = "dashboard.html";
+    }else{
+      showToast("Username atau Password salah");
+    }
+  }
+</script>
+
+</body>
+</html>

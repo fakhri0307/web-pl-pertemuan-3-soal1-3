@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Perhitungan BBM</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR (desktop only) -->
+<div class="sidebar p-3 d-none d-md-block">
+  <div class="d-flex align-items-center mb-5">
+    <img src="../img/logopt.png" alt="Logo" style="width:50px; height:50px; object-fit:cover; border-radius:8px;" class="me-2">
+    <span class="fw-bold fs-5 text-primary">FAKHRI SR</span>
+  </div>
+  <a href="dashboard.html" class="d-block py-2 px-3 mb-4 rounded hover-bg"><i class="fa fa-chart-line me-2"></i> Dashboard</a>
+  <a href="bbm.html" class="d-block py-2 px-3 mb-4 rounded hover-bg"><i class="fa fa-gas-pump me-2"></i> BBM</a>
+  <a href="laptop.html" class="d-block py-2 px-3 mb-4 rounded hover-bg"><i class="fa fa-laptop me-2"></i> Laptop</a>
+  <a href="kelulusan.html" class="d-block py-2 px-3 mb-4 rounded hover-bg"><i class="fa fa-graduation-cap me-2"></i> Kelulusan</a>
+  <a href="soal.html" class="d-block py-2 px-3 mb-4 rounded hover-bg"><i class="fa fa-book me-2"></i> Penjelasan Soal</a>
+</div>
+
+<!-- NAVBAR (mobile only) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm d-md-none mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-primary" href="#">
+      <i class="fa fa-chart-line"></i> PROGRAMMING LANGUAGE
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mobileNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="bbm.html">BBM</a></li>
+        <li class="nav-item"><a class="nav-link" href="laptop.html">Laptop</a></li>
+        <li class="nav-item"><a class="nav-link" href="kelulusan.html">Kelulusan</a></li>
+        <li class="nav-item"><a class="nav-link" href="soal.html">Penjelasan Soal</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <!-- Profile -->
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#profileModal">
+            <i class="fa fa-user me-2"></i> Profile
+          </a>
+        </li>
+        <!-- Logout -->
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="#" onclick="logout()">
+            <i class="fa fa-sign-out-alt me-2"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="content">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-3 mb-4 d-none d-md-flex">
+    <span class="navbar-brand fw-bold text-primary"><i class="fa fa-chart-line"></i> BBM - PERJALANAN</span>
+    <div class="ms-auto d-flex align-items-center gap-3">
+      <div class="dropdown">
+        <button class="btn d-flex align-items-center user-menu dropdown-toggle" data-bs-toggle="dropdown">
+          <img src="../img/foto-user.jpeg" class="user-img me-2">
+          <div class="text-start d-none d-md-block">
+            <div class="fw-semibold small">Admin User</div>
+            <div class="text-muted small">Administrator</div>
+          </div>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#profileModal"><i class="fa fa-user me-2"></i> Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i class="fa fa-sign-out-alt me-2"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<h3><i class="fa fa-gas-pump"></i> Perhitungan Konsumsi BBM</h3>
+
+<!-- RINGKASAN SOAL -->
+
+<div class="card p-3 mt-3">
+
+<h5>Ringkasan Soal</h5>
+
+<p>
+Seorang dosen melakukan perjalanan dari <b>Bogor ke Yogyakarta</b>.
+Diketahui jarak perjalanan :
+<p>• Jarak total perjalanan = 560 km
+<p>• Konsumsi mobil = 1 liter untuk 12 km</p>
+<p>• Harga bensin = Rp13.500 per liter</p>
+</p> konsumsi mobil, dan harga bensin.
+Tugasnya adalah menghitung <b>jumlah liter bensin yang dibutuhkan</b> serta 
+<b>total biaya bensin</b> menggunakan operasi aritmatika.
+</p>
+
+</div>
+
+
+<!-- FORM INPUT -->
+
+<div class="card p-4 mt-3">
+
+<h5>Input Data Perjalanan</h5>
+
+<!-- BBM -->
+<div class="mb-3">
+  <label>Jarak (km)</label>
+  <input type="number" id="jarak" step="any" class="form-control" placeholder="Masukkan jarak">
+</div>
+<div class="mb-3">
+  <label>Konsumsi Mobil (km/liter)</label>
+  <input type="number" id="konsumsi" step="any" class="form-control" placeholder="Masukkan konsumsi">
+</div>
+<div class="mb-3">
+  <label>Harga Bensin (Rp/liter)</label>
+  <input type="text" id="harga" step="any" class="form-control" placeholder="Masukkan harga">
+</div>
+
+<button onclick="hitungBBM()" class="btn btn-primary mt-3">
+<i class="fa fa-calculator"></i> Hitung Konsumsi BBM
+</button>
+
+</div>
+
+
+<!-- HASIL -->
+
+<div class="card p-4 mt-3">
+
+<h5>Hasil Perhitungan</h5>
+
+<p>Total Liter BBM Dibutuhkan :</p>
+<h4 id="liter" class="text-primary"></h4>
+
+<p>Total Biaya Bensin :</p>
+<h4 id="biaya" class="text-success"></h4>
+
+</div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+<div id="liveToast" class="toast">
+
+<div class="toast-body" id="toastBody"></div>
+
+</div>
+
+</div>
+
+
+<script src="../js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- POP UP USER -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold" id="profileModalLabel">Profile User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body text-center">
+        <img src="../img/foto-user.jpeg" alt="User" class="rounded-circle mb-3" style="width:100px; height:100px; object-fit:cover;">
+        <h5 class="fw-semibold mb-2">MAHASISWA</h5>
+        <div class="text-muted mb-2">Fakhri Shiddiq Rizkillah</div>
+        <div class="text-muted mb-2">11525017</div>
+        <div class="text-muted mb-2">Sistem Informasi</div>
+        <div class="text-muted mb-2">Semester 2</div>
+        <div class="text-muted mb-2">Universitas Binaniaga Indonesia</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
